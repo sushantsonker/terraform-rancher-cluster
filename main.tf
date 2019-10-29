@@ -2,7 +2,7 @@
 provider "aws" {
   # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
   version = "~> 2.7"
-  region = "us-east-2"
+  region = "us-east-1"
   access_key=""
   secret_key=""
 }
@@ -27,15 +27,27 @@ data "template_file" "userdata" {
   }
 }
 
+data "aws_ami" "centos" {
+  most_recent = true
+
+  filter {
+    name   = "image-id"
+    values = ["ami-925b0fe8"]
+  }
+
+  owners = ["679593333241"] # Canonical
+}
+
+
 
 # Places instances in first subnet 
 resource "aws_instance" "rancher-manager" {
-  ami                    = "ami-01a834fd83ae239ff" 
+  ami                    = "${data.aws_ami.centos.id}" 
   instance_type          = "${var.instance_type}"
-  key_name               = "jenkins.pem"
+  key_name               = "upworks_manoj"
   count                  = "${var.instance_count}"
-  vpc_security_group_ids = ["sg-03bc795c15f28ee72"]
-  subnet_id              = "subnet-7e74af16"
+  vpc_security_group_ids = ["sg-09013457588c0afde"]
+  subnet_id              = "subnet-0671b05a"
   user_data              = "${data.template_file.userdata.rendered}"
 
   tags = "${var.tags}"
