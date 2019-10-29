@@ -1,0 +1,77 @@
+Operations 
+ Up  Reload  Edit  Delete 
+
+Actions 
+None 
+
+Filter 
+Not available
+
+Sort 
+Not available
+
+Pagination 
+Not available
+
+admin Log Out 
+{
+"amazonec2Config": {
+"accessKey": "",
+"ami": "ami-01a834fd83ae239ff",
+"blockDurationMinutes": "0",
+"deviceName": "/dev/sda1",
+"endpoint": "",
+"iamInstanceProfile": "ec2-rancher-node-role",
+"insecureTransport": false,
+"instanceType": "t2.medium",
+"keypairName": "jenkins.pem",
+"monitoring": false,
+"privateAddressOnly": false,
+"region": "us-east-2",
+"requestSpotInstance": false,
+"retries": "5",
+"rootSize": "16",
+"securityGroup": [
+"sushant-allowall"
+],
+"securityGroupReadonly": false,
+"sessionToken": "",
+"spotPrice": "0.50",
+"sshKeyContents": "",
+"sshUser": "ec2-user",
+"subnetId": "",
+"tags": "Name,sks-rancher-node,Team,DevOps Engineering,Project,OSS 2.0,Owner,Sushant Sonker",
+"useEbsOptimizedInstance": false,
+"usePrivateAddress": false,
+"userdata": "",
+"volumeType": "gp2",
+"vpcId": "vpc-147fad7c",
+"zone": "a"
+},
+"annotations": { },
+"baseType": "nodeTemplate",
+"cloudCredentialId": "cattle-global-data:lab-credentials",
+"created": "2019-08-12T07:17:12Z",
+"createdTS": 1565594232000,
+"creatorId": "user-nwxx6",
+"driver": "amazonec2",
+"engineInstallURL": "https://releases.rancher.com/install-docker/18.09.sh",
+"engineRegistryMirror": null,
+"id": "user-nwxx6:nt-59gh8",
+"labels": {
+"cattle.io/creator": "norman"
+},
+"links": {
+"nodePools": "…/v3/nodePools?nodeTemplateId=user-nwxx6%3Ant-59gh8",
+"nodes": "…/v3/nodes?nodeTemplateId=user-nwxx6%3Ant-59gh8",
+"self": "…/v3/nodeTemplates/user-nwxx6:nt-59gh8",
+"update": "…/v3/nodeTemplates/user-nwxx6:nt-59gh8"
+},
+"name": "rancher-node-template",
+"state": "active",
+"transitioning": "no",
+"transitioningMessage": "",
+"type": "nodeTemplate",
+"useInternalIpAddress": true,
+"uuid": "345f6f38-bcd1-11e9-b667-0242ac110002"
+}
